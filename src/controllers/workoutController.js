@@ -11,17 +11,11 @@ const getOneWorkout = (req, res) => {
 };
 
 const createNewWorkout = (req, res) => {
-    const { body } = req;
+    const { name, mode, equipment, exercises, trainerTips } = req.body;
 
-    if(
-    !body.name ||
-    !body.mode ||
-    !body.equipment ||
-    !body.exercises ||
-    !body.trainerTips
-    ) {
+    if( name || mode || equipment || exercises ||trainerTips) {
         return;
-    }
+    };
 
     const newWorkout = {
         name: body.name,
